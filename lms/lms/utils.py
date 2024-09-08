@@ -930,11 +930,19 @@ def get_membership_plan(text):
 	mem_plans = frappe.get_all(
 		"Membership Plan",
 		filters={},
-		fields=["plan_name", "duration", "cost", "currency"],
+		fields=["name","plan_name", "duration", "cost", "currency"],
 	)
 	return mem_plans
 
-
+@frappe.whitelist(allow_guest=True)
+def get_events():
+    current_datetime = frappe.utils.now_datetime()
+    events = frappe.get_all(
+        "Event Management",
+        filters={"registration_dead_line": [">=", current_datetime]},
+        fields=["*"]
+    )
+    return events
 
 @frappe.whitelist(allow_guest=True)
 def check_or_create_user(email, full_name, membership_plan, payment_status):

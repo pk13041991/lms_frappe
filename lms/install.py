@@ -20,6 +20,7 @@ def add_pages_to_nav():
 		{"label": "Batches", "url": "/lms/batches", "parent": "Explore", "idx": 3},
 		{"label": "Statistics", "url": "/lms/statistics", "parent": "Explore", "idx": 4},
 		{"label": "Jobs", "url": "/lms/job-openings", "parent": "Explore", "idx": 5},
+		{"label": "Home", "url": "/", "parent": "Explore", "idx": 6},
 	]
 
 	for page in pages:

@@ -7,56 +7,56 @@ const routes = [
 	{
 		path: '/',
 		redirect: {
-			name: 'Courses',
+			name: 'Home',
 		},
 	},
 	{
-		path: '/courses',
+		path: '/lms/courses',
 		name: 'Courses',
 		component: () => import('@/pages/Courses.vue'),
 	},
 	{
-		path: '/courses/:courseName',
+		path: '/lms/courses/:courseName',
 		name: 'CourseDetail',
 		component: () => import('@/pages/CourseDetail.vue'),
 		props: true,
 	},
 	{
-		path: '/courses/:courseName/learn/:chapterNumber-:lessonNumber',
+		path: '/lms/courses/:courseName/learn/:chapterNumber-:lessonNumber',
 		name: 'Lesson',
 		component: () => import('@/pages/Lesson.vue'),
 		props: true,
 	},
 	{
-		path: '/batches',
+		path: '/lms/batches',
 		name: 'Batches',
 		component: () => import('@/pages/Batches.vue'),
 	},
 	{
-		path: '/batches/details/:batchName',
+		path: '/lms/batches/details/:batchName',
 		name: 'BatchDetail',
 		component: () => import('@/pages/BatchDetail.vue'),
 		props: true,
 	},
 	{
-		path: '/batches/:batchName',
+		path: '/lms/batches/:batchName',
 		name: 'Batch',
 		component: () => import('@/pages/Batch.vue'),
 		props: true,
 	},
 	{
-		path: '/billing/:type/:name',
+		path: '/lms/billing/:type/:name',
 		name: 'Billing',
 		component: () => import('@/pages/Billing.vue'),
 		props: true,
 	},
 	{
-		path: '/statistics',
+		path: '/lms/statistics',
 		name: 'Statistics',
 		component: () => import('@/pages/Statistics.vue'),
 	},
 	{
-		path: '/user/:username',
+		path: '/lms/user/:username',
 		name: 'Profile',
 		component: () => import('@/pages/Profile.vue'),
 		props: true,
@@ -85,69 +85,69 @@ const routes = [
 		],
 	},
 	{
-		path: '/job-openings',
+		path: '/lms/job-openings',
 		name: 'Jobs',
 		component: () => import('@/pages/Jobs.vue'),
 	},
 	{
-		path: '/job-openings/:job',
+		path: '/lms/job-openings/:job',
 		name: 'JobDetail',
 		component: () => import('@/pages/JobDetail.vue'),
 		props: true,
 	},
 	{
-		path: '/courses/:courseName/edit',
+		path: '/lms/courses/:courseName/edit',
 		name: 'CourseForm',
 		component: () => import('@/pages/CourseForm.vue'),
 		props: true,
 	},
 	{
-		path: '/courses/:courseName/learn/:chapterNumber-:lessonNumber/edit',
+		path: '/lms/courses/:courseName/learn/:chapterNumber-:lessonNumber/edit',
 		name: 'LessonForm',
 		component: () => import('@/pages/LessonForm.vue'),
 		props: true,
 	},
 	{
-		path: '/batches/:batchName/edit',
+		path: '/lms/batches/:batchName/edit',
 		name: 'BatchForm',
 		component: () => import('@/pages/BatchForm.vue'),
 		props: true,
 	},
 	{
-		path: '/job-opening/:jobName/edit',
+		path: '/lms/job-opening/:jobName/edit',
 		name: 'JobCreation',
 		component: () => import('@/pages/JobCreation.vue'),
 		props: true,
 	},
 	{
-		path: '/assignment-submission/:assignmentName/:submissionName',
+		path: '/lms/assignment-submission/:assignmentName/:submissionName',
 		name: 'AssignmentSubmission',
 		component: () => import('@/pages/AssignmentSubmission.vue'),
 		props: true,
 	},
 	{
-		path: '/certified-participants',
+		path: '/lms/certified-participants',
 		name: 'CertifiedParticipants',
 		component: () => import('@/pages/CertifiedParticipants.vue'),
 	},
 	{
-		path: '/notifications',
+		path: '/lms/notifications',
 		name: 'Notifications',
 		component: () => import('@/pages/Notifications.vue'),
 	},
 	{
-		path: '/badges/:badgeName/:email',
+		path: '/lms/badges/:badgeName/:email',
 		name: 'Badge',
 		component: () => import('@/pages/Badge.vue'),
 		props: true,
 	},
 	{
-		path: '/quizzes',
+		path: '/lms/quizzes',
 		name: 'Quizzes',
 		component: () => import('@/pages/Quizzes.vue'),
 	},
 	{
-		path: '/quizzes/:quizID',
+		path: '/lms/quizzes/:quizID',
 		name: 'QuizCreation',
 		component: () => import('@/pages/QuizCreation.vue'),
 		props: true,
@@ -155,7 +155,7 @@ const routes = [
 ]
 
 let router = createRouter({
-	history: createWebHistory('/lms'),
+	history: createWebHistory(''),
 	routes,
 })
 

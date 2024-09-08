@@ -10,6 +10,7 @@ def execute():
 		"show_assessments",
 		"show_discussions",
 		"show_live_class",
+		"show_home",
 	]
 
 	for field in fields:

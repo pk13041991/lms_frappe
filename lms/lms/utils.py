@@ -934,6 +934,26 @@ def get_membership_plan(text):
 	)
 	return mem_plans
 
+
+@frappe.whitelist(allow_guest=True)
+def get_event(name):
+    current_datetime = frappe.utils.now_datetime()
+    print("Fetched name:", name)
+    events = frappe.get_all(
+        "Event Management",
+        filters={"name": name, "registration_dead_line": [">=", current_datetime]},
+        fields=["*"]
+    )
+    
+    # Print events to the server's console
+    print("Fetched events:", events)
+    
+    if events:
+        return events[0]
+    
+    return {}
+
+
 @frappe.whitelist(allow_guest=True)
 def get_events():
     current_datetime = frappe.utils.now_datetime()
@@ -944,6 +964,46 @@ def get_events():
     )
     return events
 
+
+@frappe.whitelist(allow_guest=True)
+def register_for_event(attendee_name, attendee_email, attendeemobile, registration_date, registered_for, attendance_status, comments, event_name):
+    try:
+        print("hi")
+        # Fetch event details
+        events = frappe.get_all(
+            "Event Management",
+            filters={"event_name": event_name},
+            fields=["name", "event_name"]
+        )
+        
+        if not events:
+            return {"status": "error", "message": _("Event not found.")}
+
+        event_doc = frappe.get_doc("Event Management", events[0].name)
+        print("Event Document:", event_doc)
+
+        # Create new registration
+        registration_doc = {
+            "doctype": "Registration",
+            "attendee_name": attendee_name,
+            "attendee_email": attendee_email,
+            "attendeemobile": attendeemobile,
+            "registration_date": registration_date,
+            "registered_for": registered_for,
+            "attendance_status": attendance_status,
+            "comments": comments
+        }
+
+        # Append to event's registrations
+        event_doc.append("registrations", registration_doc)
+        event_doc.save()
+
+        return {"status": "success", "message": _("Registration successful.")}
+    
+    except Exception as e:
+        frappe.log_error(message=str(e), title="Registration Error")
+        print("Error:", e)
+        return {"status": "error", "message": _("An error occurred while registering.")}
 @frappe.whitelist(allow_guest=True)
 def check_or_create_user(email, full_name, membership_plan, payment_status):
     try:

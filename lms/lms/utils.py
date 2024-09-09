@@ -968,7 +968,6 @@ def get_events():
 @frappe.whitelist(allow_guest=True)
 def register_for_event(attendee_name, attendee_email, attendeemobile, registration_date, registered_for, attendance_status, comments, event_name):
     try:
-        print("hi")
         # Fetch event details
         events = frappe.get_all(
             "Event Management",

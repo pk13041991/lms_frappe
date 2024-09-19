@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Frappe LMS VERSION\n"
 "Report-Msgid-Bugs-To: jannat@frappe.io\n"
-"POT-Creation-Date: 2024-08-23 16:04+0000\n"
-"PO-Revision-Date: 2024-08-23 16:04+0000\n"
+"POT-Creation-Date: 2024-09-13 16:04+0000\n"
+"PO-Revision-Date: 2024-09-13 16:04+0000\n"
 "Last-Translator: jannat@frappe.io\n"
 "Language-Team: jannat@frappe.io\n"
 "MIME-Version: 1.0\n"
@@ -138,7 +138,7 @@ msgstr ""
 msgid "Allow accessing future dates"
 msgstr ""
 
-#: overrides/user.py:198
+#: overrides/user.py:199
 msgid "Already Registered"
 msgstr ""
 
@@ -378,6 +378,11 @@ msgstr ""
 msgid "Batch Student"
 msgstr ""
 
+#. Label of the batch_title (Data) field in DocType 'LMS Certificate Request'
+#: lms/doctype/lms_certificate_request/lms_certificate_request.json
+msgid "Batch Title"
+msgstr ""
+
 #: public/js/common_functions.js:427
 msgid "Batch Updated"
 msgstr ""
@@ -393,7 +398,7 @@ msgstr ""
 #. Group in LMS Course's connections
 #. Label of the batches (Check) field in DocType 'LMS Settings'
 #: lms/doctype/lms_course/lms_course.json
-#: lms/doctype/lms_settings/lms_settings.json www/lms.py:61
+#: lms/doctype/lms_settings/lms_settings.json www/lms.py:60
 msgid "Batches"
 msgstr ""
 
@@ -906,7 +911,7 @@ msgstr ""
 msgid "Course Lesson"
 msgstr ""
 
-#: www/lms.py:28
+#: www/lms.py:27
 msgid "Course List"
 msgstr ""
 
@@ -936,8 +941,10 @@ msgstr ""
 
 #. Label of the title (Data) field in DocType 'Batch Course'
 #. Label of the course_title (Data) field in DocType 'LMS Certificate'
+#. Label of the course_title (Data) field in DocType 'LMS Certificate Request'
 #: lms/doctype/batch_course/batch_course.json
 #: lms/doctype/lms_certificate/lms_certificate.json
+#: lms/doctype/lms_certificate_request/lms_certificate_request.json
 msgid "Course Title"
 msgstr ""
 
@@ -1297,13 +1304,28 @@ msgstr ""
 #. Label of the evaluator (Link) field in DocType 'Batch Course'
 #. Label of the evaluator (Link) field in DocType 'Course Evaluator'
 #. Label of the evaluator (Link) field in DocType 'LMS Assignment Submission'
+#. Label of the evaluator (Link) field in DocType 'LMS Certificate'
+#. Label of the evaluator (Link) field in DocType 'LMS Certificate Evaluation'
 #. Label of the evaluator (Link) field in DocType 'LMS Certificate Request'
 #: lms/doctype/batch_course/batch_course.json
 #: lms/doctype/course_evaluator/course_evaluator.json
 #: lms/doctype/lms_assignment_submission/lms_assignment_submission.json
+#: lms/doctype/lms_certificate/lms_certificate.json
+#: lms/doctype/lms_certificate_evaluation/lms_certificate_evaluation.json
 #: lms/doctype/lms_certificate_request/lms_certificate_request.json
 #: templates/upcoming_evals.html:33
 msgid "Evaluator"
+msgstr ""
+
+#. Label of the evaluator_name (Data) field in DocType 'LMS Certificate'
+#. Label of the evaluator_name (Data) field in DocType 'LMS Certificate
+#. Evaluation'
+#. Label of the evaluator_name (Data) field in DocType 'LMS Certificate
+#. Request'
+#: lms/doctype/lms_certificate/lms_certificate.json
+#: lms/doctype/lms_certificate_evaluation/lms_certificate_evaluation.json
+#: lms/doctype/lms_certificate_request/lms_certificate_request.json
+msgid "Evaluator Name"
 msgstr ""
 
 #. Name of a DocType
@@ -1548,7 +1570,7 @@ msgstr ""
 msgid "Here are a few courses we recommend for you to get started with {0}"
 msgstr ""
 
-#: lms/notification/certificate_request_creation/certificate_request_creation.html:6
+#: lms/notification/certificate_request_reminder/certificate_request_reminder.html:1
 #: templates/emails/certificate_request_notification.html:1
 msgid "Hey {0}"
 msgstr ""
@@ -1833,7 +1855,7 @@ msgstr ""
 msgid "Job Board Title"
 msgstr ""
 
-#: www/lms.py:109
+#: www/lms.py:108
 msgid "Job Openings"
 msgstr ""
 
@@ -2395,11 +2417,11 @@ msgstr ""
 msgid "Modified By"
 msgstr ""
 
-#: lms/api.py:189
+#: lms/api.py:190
 msgid "Module Name is incorrect or does not exist."
 msgstr ""
 
-#: lms/api.py:185
+#: lms/api.py:186
 msgid "Module is incorrect."
 msgstr ""
 
@@ -2424,11 +2446,11 @@ msgstr ""
 msgid "New Assignment Submission"
 msgstr ""
 
-#: public/js/common_functions.js:255 www/lms.py:87
+#: public/js/common_functions.js:255 www/lms.py:86
 msgid "New Batch"
 msgstr ""
 
-#: www/lms.py:38
+#: www/lms.py:37
 msgid "New Course"
 msgstr ""
 
@@ -2489,7 +2511,7 @@ msgstr ""
 msgid "No."
 msgstr ""
 
-#: overrides/user.py:193
+#: overrides/user.py:194
 msgid "Not Allowed"
 msgstr ""
 
@@ -2754,11 +2776,11 @@ msgstr ""
 msgid "Please add <a href='{0}'>{1}</a> for <a href='{2}'>{3}</a> to send calendar invites for evaluations."
 msgstr ""
 
-#: overrides/user.py:239
+#: overrides/user.py:240
 msgid "Please ask your administrator to verify your sign-up"
 msgstr ""
 
-#: overrides/user.py:237
+#: overrides/user.py:238
 msgid "Please check your email for verification"
 msgstr ""
 
@@ -2783,13 +2805,12 @@ msgstr ""
 msgid "Please enter your answer"
 msgstr ""
 
-#: lms/api.py:181
+#: lms/api.py:182
 msgid "Please login to continue with payment."
 msgstr ""
 
-#: lms/notification/certificate_request_creation/certificate_request_creation.html:9
-#: lms/notification/certificate_request_reminder/certificate_request_reminder.html:8
-#: templates/emails/certificate_request_notification.html:4
+#: lms/notification/certificate_request_reminder/certificate_request_reminder.html:7
+#: templates/emails/certificate_request_notification.html:7
 msgid "Please prepare well and be on time for the evaluations."
 msgstr ""
 
@@ -3059,7 +3080,7 @@ msgstr ""
 msgid "Registered"
 msgstr ""
 
-#: overrides/user.py:200
+#: overrides/user.py:201
 msgid "Registered but disabled"
 msgstr ""
 
@@ -3295,7 +3316,7 @@ msgstr ""
 msgid "Sidebar Items"
 msgstr ""
 
-#: overrides/user.py:193
+#: overrides/user.py:194
 msgid "Sign Up is disabled"
 msgstr ""
 
@@ -3339,7 +3360,7 @@ msgstr ""
 msgid "Skills"
 msgstr ""
 
-#: overrides/user.py:41
+#: overrides/user.py:42
 msgid "Skills must be unique"
 msgstr ""
 
@@ -3447,7 +3468,7 @@ msgid "Startup Organization"
 msgstr ""
 
 #. Label of the statistics (Check) field in DocType 'LMS Settings'
-#: lms/doctype/lms_settings/lms_settings.json www/lms.py:134
+#: lms/doctype/lms_settings/lms_settings.json www/lms.py:133
 msgid "Statistics"
 msgstr ""
 
@@ -3631,7 +3652,7 @@ msgstr ""
 msgid "Template"
 msgstr ""
 
-#: overrides/user.py:204
+#: overrides/user.py:205
 msgid "Temporarily Disabled"
 msgstr ""
 
@@ -3676,7 +3697,7 @@ msgstr ""
 msgid "The course {0} is now available on {1}."
 msgstr ""
 
-#: lms/doctype/lms_certificate_request/lms_certificate_request.py:47
+#: lms/doctype/lms_certificate_request/lms_certificate_request.py:51
 msgid "The evaluator of this course is unavailable from {0} to {1}. Please select a date after {1}"
 msgstr ""
 
@@ -3684,7 +3705,7 @@ msgstr ""
 msgid "The quiz has a time limit. For each question you will be given {0} seconds."
 msgstr ""
 
-#: lms/doctype/lms_certificate_request/lms_certificate_request.py:65
+#: lms/doctype/lms_certificate_request/lms_certificate_request.py:69
 msgid "The slot is already booked by another participant."
 msgstr ""
 
@@ -3770,8 +3791,10 @@ msgid "Timetable Template"
 msgstr ""
 
 #. Label of the timezone (Data) field in DocType 'LMS Batch'
+#. Label of the timezone (Data) field in DocType 'LMS Certificate Request'
 #. Label of the timezone (Data) field in DocType 'LMS Live Class'
 #: lms/doctype/lms_batch/lms_batch.json
+#: lms/doctype/lms_certificate_request/lms_certificate_request.json
 #: lms/doctype/lms_live_class/lms_live_class.json
 msgid "Timezone"
 msgstr ""
@@ -3833,7 +3856,7 @@ msgstr ""
 msgid "To join this batch, please contact the Administrator."
 msgstr ""
 
-#: overrides/user.py:205
+#: overrides/user.py:206
 msgid "Too many users signed up recently, so the registration is disabled. Please try back in an hour"
 msgstr ""
 
@@ -4083,15 +4106,15 @@ msgstr ""
 msgid "Write a review"
 msgstr ""
 
-#: lms/doctype/lms_certificate_request/lms_certificate_request.py:89
+#: lms/doctype/lms_certificate_request/lms_certificate_request.py:93
 msgid "You already have an evaluation on {0} at {1} for the course {2}."
 msgstr ""
 
-#: lms/api.py:205
+#: lms/api.py:206
 msgid "You are already enrolled for this batch."
 msgstr ""
 
-#: lms/api.py:197
+#: lms/api.py:198
 msgid "You are already enrolled for this course."
 msgstr ""
 
@@ -4116,11 +4139,11 @@ msgstr ""
 msgid "You can find their resume attached to this email."
 msgstr ""
 
-#: lms/doctype/lms_certificate_request/lms_certificate_request.py:109
+#: lms/doctype/lms_certificate_request/lms_certificate_request.py:113
 msgid "You cannot schedule evaluations after {0}."
 msgstr ""
 
-#: lms/doctype/lms_certificate_request/lms_certificate_request.py:98
+#: lms/doctype/lms_certificate_request/lms_certificate_request.py:102
 msgid "You cannot schedule evaluations for past slots."
 msgstr ""
 
@@ -4180,19 +4203,16 @@ msgstr ""
 msgid "Your Account has been successfully created!"
 msgstr ""
 
-#: lms/notification/certificate_request_creation/certificate_request_creation.html:7
-#: lms/notification/certificate_request_reminder/certificate_request_reminder.html:6
-#: templates/emails/certificate_request_notification.html:2
+#: lms/notification/certificate_request_reminder/certificate_request_reminder.html:3
+#: templates/emails/certificate_request_notification.html:3
 msgid "Your evaluation for the course {0} has been scheduled on {1} at {2} {3}."
 msgstr ""
 
-#: lms/doctype/lms_certificate_request/lms_certificate_request.py:119
+#: lms/doctype/lms_certificate_request/lms_certificate_request.py:123
 msgid "Your evaluation slot has been booked"
 msgstr ""
 
-#: lms/notification/certificate_request_creation/certificate_request_creation.html:8
-#: lms/notification/certificate_request_reminder/certificate_request_reminder.html:7
-#: templates/emails/certificate_request_notification.html:3
+#: templates/emails/certificate_request_notification.html:5
 msgid "Your evaluator is {0}"
 msgstr ""
 
@@ -4271,6 +4291,10 @@ msgstr ""
 
 #: lms/doctype/lms_certificate/lms_certificate.py:59
 msgid "{0} is already certified for the course {1}"
+msgstr ""
+
+#: lms/notification/certificate_request_reminder/certificate_request_reminder.html:5
+msgid "{0} is your evaluator"
 msgstr ""
 
 #: lms/utils.py:689

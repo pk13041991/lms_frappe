@@ -1,15 +1,8 @@
 <template>
-
-<header class="frappe-header">
-			<div id="toolbar"></div>
-			<div id="navbar"></div>
-		</header>
 	<div v-if="courses.data">
-		
 		<header
 			class="sticky top-0 z-10 flex items-center justify-between border-b bg-white px-3 py-2.5 sm:px-5"
 		>
-
 			<Breadcrumbs
 				class="h-7"
 				:items="[{ label: __('Courses'), route: { name: 'Courses' } }]"
@@ -189,7 +182,7 @@ const getCourses = (type) => {
 
 const pageMeta = computed(() => {
 	return {
-		title: 'Prasanna',
+		title: 'Courses',
 		description: 'All Courses divided by categories',
 	}
 })
